@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import type { ATRecord, ATData } from '../api/data';
 
