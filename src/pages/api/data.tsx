@@ -9,25 +9,33 @@ export interface ATRecord {
     Status: string;
   }
 }
+  
+
+export interface ATData {
+  data: {
+    records: ATRecord[];
+  }
+}
+
+
 
 export default async function data(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
   
+  const airtable_base = 'appbjp7mNAbGS4vSz'
+  const airtable_table = 'tblcOsZghcJOa6ww5'
+
+  const token = process.env.AIRTABLE_PERSONAL_TOKEN ? process.env.AIRTABLE_PERSONAL_TOKEN : "lmao fix your token"
+  const conf = {
+    headers: { Authorization: `Bearer ${token}` }
+};
+
   try {
-    const airtable_base = 'appbjp7mNAbGS4vSz'
-    const airtable_table = 'tblcOsZghcJOa6ww5'
-
-    const token = process.env.AIRTABLE_PERSONAL_TOKEN ? process.env.AIRTABLE_PERSONAL_TOKEN : "lmao fix your token"
-    const conf = {
-      headers: { Authorization: `Bearer ${token}` }
-  };
-
-    const response = await axios.get<ATRecord[]>(`https://api.airtable.com/v0/${airtable_base}/${airtable_table}`);
+    const response = await axios.get<ATRecord[]>(`https://api.airtable.com/v0/${airtable_base}/${airtable_table}`, conf);
     const data = response.data;
     res.status(200).json({ data });
-    console.log(data)
   } catch (error: unknown) {
     console.error(error);
     if ((error as { message?: string }).message) {

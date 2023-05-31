@@ -17,6 +17,4 @@ model Person {
     createdAt DateTime @default(now())
     name      String
     status    String
-
-    @@index([name])
 }
