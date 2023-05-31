@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { type NextPage } from "next";
-import ATCaller from './components/airtable_caller'
 import Select from 'react-select';
-import type { ATRecord } from './api/data';
+import axios from 'axios'
+import { type NextPage } from "next";
+import type { ATRecord, ATData } from './api/data';
 
 const Home: NextPage = () => {
   
   const [atData, setAtData] = useState<ATRecord[]>([]);
+
+  async function ATCaller(): Promise<ATRecord[]> {
+    try {
+      const response = await axios.get<ATData>('/api/data');
+      return response.data.data.records;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
 
   useEffect(() => {
     ATCaller()
