@@ -8,7 +8,6 @@ import { ChangeEvent, useState } from 'react';
 export default function Page() {
   const router = useRouter();
   const [searchBoxText, setSearchBoxText] = useState('')
-  const [tableData, setTableData] = useState([])
   
   const {data} = api.customTable.getAllCustomTables.useQuery();
 
@@ -30,11 +29,11 @@ export default function Page() {
         </thead>
         <tbody>
          {filteredData?.length !== 0 ? (
-            filteredData?.map((item: TableData, index: number) => (
+            filteredData?.map((item: CustomTable, index: number) => (
               <tr key={index}>
                 <td>{item.name}</td>
                 <td>{item.key}</td>
-                <td>{item.success ? 'Yes' : 'No'}</td>
+                <td>Yes</td>
               </tr>
             ))
           ) : (
