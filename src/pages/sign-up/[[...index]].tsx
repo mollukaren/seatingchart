@@ -9,16 +9,13 @@ function ExtractUser() : string {
   if(!isSignedIn || !user.username) {
     return "No User";
   }
-
+  console.log(user.username)
   return `${user.username}`
 }
 
 const SignUpPage = () => (
-
   <SignUp path="/sign-up" routing="path" signInUrl="/sign-in" 
-
   redirectUrl={`/user/[${ExtractUser()}]`}/>
-
   );
 
 

@@ -1,5 +1,4 @@
 import { SignIn } from "@clerk/nextjs";
-
 import { useUser } from '@clerk/clerk-react'
 
 function ExtractUser() : string {
@@ -7,15 +6,13 @@ function ExtractUser() : string {
   if(!isSignedIn || !user.username) {
     return "No User";
   }
+  console.log(user.username)
   return `${user.username}`
 }
-
-
 
 const SignInPage = () => (
   <>
     <SignIn path="/sign-in" routing="path" signUpUrl="/sign-up" 
-    
     redirectUrl={`/user/[${ExtractUser()}]`}
     />
   </>
