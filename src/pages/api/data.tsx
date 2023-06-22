@@ -9,7 +9,6 @@ export interface ATRecord {
     Status: string;
   }
 }
-  
 
 export interface ATData {
   data: {
