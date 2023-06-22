@@ -3,7 +3,8 @@ import { api } from "~/utils/api"
 import { useAuth } from '@clerk/nextjs'
 import { type CustomTable } from '@prisma/client';
 import { ChangeEvent, useState } from 'react';
-import { TableForm } from "@/components/ui/addtableform"
+import { TableForm } from "@/components/ui/addTableForm"
+import { TableDialog } from '@/components/ui/addTableDialog';
 
 
 export default function Page() {
@@ -31,6 +32,7 @@ export default function Page() {
       <button onClick={openModal}>Open Modal</button>
       <input placeholder='search a table name here' onChange={(e) => setSearchBoxText(e.target.value)}/>
       <TableForm/>
+      <TableDialog/>
       <table>
         <thead>
           <tr>

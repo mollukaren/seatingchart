@@ -47,13 +47,33 @@ export function TableForm() {
                 <FormItem>
                     <FormLabel>Username</FormLabel>
                     <FormControl>
-                    <Input placeholder="shadcn" {...field} />
+                        <Input placeholder="Table Name" {...field} />
                     </FormControl>
                     <FormDescription>
-                    This is your public display name.
+                    Enter your table name here.
                     </FormDescription>
                     <FormMessage />
+
                 </FormItem>
+                
+                )}
+            />
+            <FormField
+                control={form.control}
+                name="api_key"
+                render={({ field }) => (
+                <FormItem>
+                    <FormLabel>API Key</FormLabel>
+                    <FormControl>
+                        <Input placeholder="API Key" {...field} />
+                    </FormControl>
+                    <FormDescription>
+                    Enter your API Key here.
+                    </FormDescription>
+                    <FormMessage />
+                    
+                </FormItem>
+                
                 )}
             />
             <Button type="submit">Submit</Button>
