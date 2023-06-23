@@ -4,6 +4,8 @@ import Link from "next/link"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
+import { type CustomTable } from '@prisma/client';
+import { api } from "~/utils/api";
 
 import { Button } from "@/components/ui/button"
 import {
@@ -31,9 +33,12 @@ export function TableForm() {
         },
     })
 
+    const { mutate } = api.customTable.addTable.useMutation()
+    
     function onSubmit(values: z.infer<typeof formSchema>) {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
+        mutate(values)
         console.log(values)
       }
 
