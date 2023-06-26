@@ -9,7 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-// import { TableForm } from "@/components/ui/addTableForm"
+import { TableForm } from "@/components/ui/addTableForm"
 
 export function TableDialogCustom() {
 
@@ -27,7 +27,7 @@ export function TableDialogCustom() {
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid items-center gap-4">
-            {/* <TableForm /> */}
+            <TableForm />
           </div>
         </div>
       </DialogContent>
