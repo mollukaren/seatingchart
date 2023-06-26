@@ -9,8 +9,6 @@ import { Button } from '@/components/ui/button';
 
 
 export default function Page() {
-  const {openCreateOrganization, openOrganizationProfile} = useClerk()
-  
   const router = useRouter();
   
   const {data} = api.customTable.getAllCustomTables.useQuery();
@@ -18,7 +16,6 @@ export default function Page() {
   return (
     <>
       <TableDialogCustom/>
-      <Button onClick={() => (console.log(openCreateOrganization))}/>
       <table>
         <thead>
           <tr>
