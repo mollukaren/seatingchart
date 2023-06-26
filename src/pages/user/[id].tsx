@@ -3,14 +3,13 @@ import { api } from "~/utils/api"
 import { useAuth, useClerk } from '@clerk/nextjs'
 import { type CustomTable } from '@prisma/client';
 import { ChangeEvent, useState } from 'react';
-import { TableForm } from "@/components/ui/addTableForm"
+import { TableForm } from "@/components/ui/addtableform"
 import { TableDialogCustom } from '@/components/ui/addTableDialogCustom';
 import { Button } from '@/components/ui/button';
 
 
 export default function Page() {
-  const router = useRouter();
-  
+ 
   const {data} = api.customTable.getAllCustomTables.useQuery();
 
   return (
