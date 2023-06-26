@@ -1,4 +1,3 @@
-import { TableForm } from "@/components/ui/addTableForm";
 import { TableDialogCustom } from '@/components/ui/addTableDialogCustom';
 
 
