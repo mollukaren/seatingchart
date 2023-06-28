@@ -3,7 +3,7 @@ import { api } from "~/utils/api"
 import { useAuth, useClerk } from '@clerk/nextjs'
 import { type CustomTable } from '@prisma/client';
 import { ChangeEvent, useState } from 'react';
-import { TableForm } from "@/components/ui/addtableform"
+import { TableForm } from "@/components/ui/addTableForm"
 import { TableDialogCustom } from '@/components/ui/addTableDialogCustom';
 import { Button } from '@/components/ui/button';
 

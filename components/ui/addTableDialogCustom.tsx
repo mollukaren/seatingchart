@@ -9,7 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { TableForm } from "@/components/ui/addtableform"
+import { TableForm } from "@/components/ui/addTableForm"
 
 export function TableDialogCustom() {
 
