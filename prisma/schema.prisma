@@ -20,10 +20,11 @@ model Person {
 }
 
 model CustomTable {
-  id          String   @id @default(cuid())
-  createdAt   DateTime @default(now())
-  key         String
-  userID      String
-  name        String?
-
+  id              String   @id @default(cuid())
+  createdAt       DateTime @default(now())
+  airtable_token  String
+  airtable_base   String
+  airtable_table  String
+  userID          String
+  name            String?
 }
