@@ -49,54 +49,66 @@ export const columns: ColumnDef<RenderedTable>[] = [
   {
     accessorKey: "airtable_table",
     header: "Table",
-  },
-  {
-    accessorKey: "status",
-    header: "Status",
-    cell: async ({ row }) => {
-      let isLoading = true
-      let emoji = "🟡"
-      const rowContent = row.original
+    cell: async ({row}) => {
+      console.log(row.original.airtable_token)
+
       const params = {
-        airtable_token: rowContent.airtable_token, 
-        airtable_base: rowContent.airtable_base, 
-        airtable_table:rowContent.airtable_table
-      };
-      
-      isLoading ? 
-      await (async function statusGetter (params: ATRequestParams): Promise<number> {
-        try{
-          const result = await ATCaller(params);
-          return(result);
-        } catch (error) {
-          console.error(error);
-          throw error;
-        } finally {
-          isLoading = false
-        }
-      })(params)
-      .then(statusCode => {
-        emoji = emojiSetter(statusCode);
-      })
-      .catch(error => console.error(error)) :
-      console.log("Already called once")
-
-      function emojiSetter(statusCode: number): string {
-        if (isLoading) {
-          return "🟡";
-        } else if (statusCode === 200) {
-          return "🟢";
-        } else {
-          return "🔴";
-        }
+        airtable_token: row.original.airtable_token, 
+        airtable_base: row.original.airtable_base, 
+        airtable_table:row.original.airtable_table
       }
-
-      return(
-      <div>
-        <span>{emoji}</span>
-        {isLoading ? <span>Loading...</span> : null}
-      </div>
-      )
-    }
+    
+      console.log(await ATCaller(params))
   }
+  },
+  
+  // {
+  //   accessorKey: "status",
+  //   header: "Status",
+  //   cell: async ({ row }) => {
+  //     let isLoading = true
+  //     let emoji = "🟡"
+  //     const rowContent = row.original
+  //     const params = {
+  //       airtable_token: rowContent.airtable_token, 
+  //       airtable_base: rowContent.airtable_base, 
+  //       airtable_table:rowContent.airtable_table
+  //     };
+      
+  //     isLoading ? 
+  //     await (async function statusGetter (params: ATRequestParams): Promise<number> {
+  //       try{
+  //         const result = await ATCaller(params);
+  //         return(result);
+  //       } catch (error) {
+  //         console.error(error);
+  //         throw error;
+  //       } finally {
+  //         isLoading = false
+  //       }
+  //     })(params)
+  //     .then(result => {
+  //       emoji = emojiSetter(result);
+  //     })
+  //     .catch(error => console.error(error)) :
+  //     console.log("not")
+
+  //     function emojiSetter(statusCode: number): string {
+  //       if (isLoading) {
+  //         return "🟡";
+  //       } else if (statusCode === 200) {
+  //         return "🟢";
+  //       } else {
+  //         return "🔴";
+  //       }
+  //     }
+
+  //     return(
+  //     <div>
+  //       <span>{emoji}</span>
+  //       {isLoading ? <span>Loading...</span> : null}
+  //     </div>
+  //     )
+  //   }
+  // }
 ]
