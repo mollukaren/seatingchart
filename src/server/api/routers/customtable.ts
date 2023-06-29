@@ -1,10 +1,10 @@
 import { createTRPCRouter, publicProcedure, privateProcedure } from "~/server/api/trpc";
 
-import { customTableSchema } from "~/schemas/customTableSchema";
+import { CustomTableSchema } from "~/schemas/customTableSchema";
 
 export const customTableRouter = createTRPCRouter({
   addTable: privateProcedure.input(
-    customTableSchema
+    CustomTableSchema
   )
   .mutation(async ( { ctx, input } ) => {
 

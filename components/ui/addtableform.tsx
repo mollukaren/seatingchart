@@ -18,14 +18,14 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
-import { customTableSchema } from "@/src/schemas/customTableSchema"
+import { CustomTableSchema } from "@/src/schemas/customTableSchema"
 import React from "react"
 
 export function TableForm() {
 const [isOpen, setOpen] = React.useState(true)
 
-    const form = useForm<z.infer<typeof customTableSchema>>({
-        resolver: zodResolver(customTableSchema),
+    const form = useForm<z.infer<typeof CustomTableSchema>>({
+        resolver: zodResolver(CustomTableSchema),
         defaultValues: {
             airtable_token: "",
             airtable_base: "",
@@ -37,7 +37,7 @@ const [isOpen, setOpen] = React.useState(true)
 
     const { mutate } = api.customTable.addTable.useMutation()
     
-    function onSubmit(values: z.infer<typeof customTableSchema>) {
+    function onSubmit(values: z.infer<typeof CustomTableSchema>) {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
         mutate(values)
