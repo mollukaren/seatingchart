@@ -1,6 +1,6 @@
 import { type NextApiRequest, type NextApiResponse } from 'next';
 import axios from 'axios';
-import { CustomTableSchema } from '~/schemas/customTableSchema';
+import { ApiRequestSchema, CustomTableSchema } from '~/schemas/customTableSchema';
 
 export interface ATRecord {
   id: string;
@@ -23,10 +23,11 @@ export default async function data(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  const response = CustomTableSchema.safeParse(req.body);
+  
+  const response = ApiRequestSchema.safeParse(req.body.data);
 
   if (!response.success){
-    return res.status(400).send({
+    return res.status(405).send({
       message: "Bad Payload"
     })
   }
@@ -38,7 +39,7 @@ export default async function data(
 
   //const token = process.env.AIRTABLE_PERSONAL_TOKEN ? process.env.AIRTABLE_PERSONAL_TOKEN : "lmao fix your token"
   const conf = {
-    headers: { Authorization: `Bearer ${key}` }
+    headers: { Authorization: `Bearer ${airtable_token}` }
 };
 
   try {

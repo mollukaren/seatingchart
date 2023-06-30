@@ -9,11 +9,7 @@ import { Smile } from "lucide-react";
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
 
-export interface RenderedTable extends CustomTable {
-  status: string
-}
-
-type ATRequestParams = {
+export type ATRequestParams = {
   airtable_token: string
   airtable_base: string
   airtable_table: string
@@ -21,7 +17,8 @@ type ATRequestParams = {
 
 export async function ATCaller(params: ATRequestParams): Promise<number> {
   try {
-    const response = await axios.get<ATData>('/api/data', {params});
+    console.log(params)
+    const response = await axios.get<ATData>('/api/data', {data: params});
     return response.status;
   } catch (error) {
     console.error(error);
@@ -29,7 +26,7 @@ export async function ATCaller(params: ATRequestParams): Promise<number> {
   }
 }
 
-export const columns: ColumnDef<RenderedTable>[] = [
+export const columns: ColumnDef<CustomTable>[] = [
   {
     accessorKey: "createdAt",
     header: "Created Date",
@@ -44,22 +41,15 @@ export const columns: ColumnDef<RenderedTable>[] = [
   },
   {
     accessorKey: "airtable_base",
-    header: "Base",
+    header: "Base ID",
   },
   {
     accessorKey: "airtable_table",
-    header: "Table",
-    cell: async ({row}) => {
-      console.log(row.original.airtable_token)
-
-      const params = {
-        airtable_token: row.original.airtable_token, 
-        airtable_base: row.original.airtable_base, 
-        airtable_table:row.original.airtable_table
-      }
-    
-      console.log(await ATCaller(params))
-  }
+    header: "Table ID",
+  },
+  {
+    accessorKey: "page_link",
+    header: "Table Page",
   },
   
   // {

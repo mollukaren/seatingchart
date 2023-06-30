@@ -90,7 +90,7 @@ const [isOpen, setOpen] = React.useState(true)
                 name="airtable_base"
                 render={({ field }) => (
                 <FormItem>
-                    <FormLabel>API Key</FormLabel>
+                    <FormLabel>AirTable Base</FormLabel>
                     <FormControl>
                         <Input placeholder="AirTable Base" {...field} />
                     </FormControl>
@@ -108,7 +108,7 @@ const [isOpen, setOpen] = React.useState(true)
                 name="airtable_table"
                 render={({ field }) => (
                 <FormItem>
-                    <FormLabel>API Key</FormLabel>
+                    <FormLabel>AirTable Table</FormLabel>
                     <FormControl>
                         <Input placeholder="AirTable Table" {...field} />
                     </FormControl>
