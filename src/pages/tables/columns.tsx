@@ -3,7 +3,8 @@ import { type CustomTable } from '@prisma/client';
 import type { ATRecord, ATData } from "../api/data";
 import axios from "axios";
 import { useEffect } from "react";
-import { Smile } from "lucide-react";
+import { Smile, ArrowUpDown, MoreHorizontal } from "lucide-react"
+import { Button } from "@/components/ui/button";
 
 
 // This type is used to define the shape of our data.
@@ -29,15 +30,39 @@ export async function ATCaller(params: ATRequestParams): Promise<number> {
 export const columns: ColumnDef<CustomTable>[] = [
   {
     accessorKey: "createdAt",
-    header: "Created Date",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Created At
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
+    cell: ({row}) => {
+      const date: Date = row.getValue("createdAt")
+      let formatted = date.toLocaleString()
+      if (formatted[1] == '/'){
+        formatted = "0" + formatted
+      }
+      return <div>{formatted}</div>
+    }
   },
   {
     accessorKey: "name",
-    header: "Name",
-  },
-  {
-    accessorKey: "airtable_token",
-    header: "Key",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Name
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
   },
   {
     accessorKey: "airtable_base",
