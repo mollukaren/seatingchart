@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import type * as z from "zod"
@@ -18,11 +17,14 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
-import { customTableSchema } from "@/src/server/api/routers/customtable"
+import { CustomTableSchema } from "@/src/schemas/customTableSchema"
+import React from "react"
 
 export function TableForm() {
-    const form = useForm<z.infer<typeof customTableSchema>>({
-        resolver: zodResolver(customTableSchema),
+const [isOpen, setOpen] = React.useState(true)
+
+    const form = useForm<z.infer<typeof CustomTableSchema>>({
+        resolver: zodResolver(CustomTableSchema),
         defaultValues: {
             airtable_token: "",
             airtable_base: "",
@@ -34,14 +36,16 @@ export function TableForm() {
 
     const { mutate } = api.customTable.addTable.useMutation()
     
-    function onSubmit(values: z.infer<typeof customTableSchema>) {
+    function onSubmit(values: z.infer<typeof CustomTableSchema>) {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
         mutate(values)
         console.log(values)
+        setOpen(false)
       }
 
     return (
+        isOpen ? (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <FormField
@@ -85,7 +89,7 @@ export function TableForm() {
                 name="airtable_base"
                 render={({ field }) => (
                 <FormItem>
-                    <FormLabel>API Key</FormLabel>
+                    <FormLabel>AirTable Base</FormLabel>
                     <FormControl>
                         <Input placeholder="AirTable Base" {...field} />
                     </FormControl>
@@ -103,7 +107,7 @@ export function TableForm() {
                 name="airtable_table"
                 render={({ field }) => (
                 <FormItem>
-                    <FormLabel>API Key</FormLabel>
+                    <FormLabel>AirTable Table</FormLabel>
                     <FormControl>
                         <Input placeholder="AirTable Table" {...field} />
                     </FormControl>
@@ -118,6 +122,6 @@ export function TableForm() {
             />
             <Button type="submit">Submit</Button>
             </form>
-        </Form>
+        </Form>) : (<h1> Press Escape </h1>)
         )
 }
