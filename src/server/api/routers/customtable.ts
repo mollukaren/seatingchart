@@ -1,4 +1,4 @@
-import { createTRPCRouter, publicProcedure, privateProcedure } from "~/server/api/trpc";
+import { createTRPCRouter, privateProcedure } from "~/server/api/trpc";
 
 import { CustomTableSchema } from "~/schemas/customTableSchema";
 

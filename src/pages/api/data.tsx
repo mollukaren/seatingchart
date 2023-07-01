@@ -1,6 +1,6 @@
 import { type NextApiRequest, type NextApiResponse } from 'next';
 import axios from 'axios';
-import { ApiRequestSchema, CustomTableSchema } from '~/schemas/customTableSchema';
+import { DataApiRequestSchema } from '~/schemas/customTableSchema';
 
 export interface ATRecord {
   id: string;
@@ -24,7 +24,7 @@ export default async function data(
   res: NextApiResponse,
 ) {
   
-  const response = ApiRequestSchema.safeParse(req.body.data!);
+  const response = DataApiRequestSchema.safeParse(req.body);
 
   if (!response.success){
     return res.status(405).send({
@@ -32,7 +32,7 @@ export default async function data(
     })
   }
   
-  const {airtable_table, airtable_base, airtable_token} = response.data
+  const {airtable_table, airtable_base, airtable_token} = response.data.data
   
   //const airtable_base = 'appbjp7mNAbGS4vSz'
   //const airtable_table = 'tblcOsZghcJOa6ww5'
