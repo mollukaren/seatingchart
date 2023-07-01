@@ -1,10 +1,6 @@
 import { api } from "~/utils/api";
 import {  columns } from "./columns"
 import { DataTable } from "./data-table"
-import { type CustomTable } from '@prisma/client';
-import axios from "axios";
-import { ATData } from "../api/data";
-
 
 export default function DemoPage() {
   const {data} = api.customTable.getAllCustomTables.useQuery(); 
@@ -13,7 +9,7 @@ export default function DemoPage() {
   
   
   return (<>
-    <h1>demo page</h1>
+    <h1>Dashboard Page</h1>
 
     {data ? (<div className="container mx-auto py-10">
       <DataTable columns={columns} data={data} />
