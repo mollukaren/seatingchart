@@ -24,7 +24,7 @@ export default async function data(
   res: NextApiResponse,
 ) {
   
-  const response = ApiRequestSchema.safeParse(req.body.data);
+  const response = ApiRequestSchema.safeParse(req.body.data!);
 
   if (!response.success){
     return res.status(405).send({
