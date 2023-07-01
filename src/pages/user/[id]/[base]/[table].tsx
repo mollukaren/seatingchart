@@ -3,7 +3,7 @@ import { api } from "~/utils/api";
 import {  columns } from "./columns"
 import { DataTable } from "./data-table"
 import { type CustomTable } from '@prisma/client';
-import { type ATRequestParams } from '~/pages/user/[id]/dashboard/columns';
+import { type ATRequestParams } from '../dashboard/columns';
 import { Progress } from "@/components/ui/progress";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useState } from 'react';
