@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router'
 import { api } from "~/utils/api";
-import {  columns } from "./columns"
-import { DataTable } from "./data-table"
+import {  columns } from "@/components/ui/chart-columns"
+import { DataTable } from "@/components/ui/chart-data-table"
 import { type CustomTable } from '@prisma/client';
-import { type ATRequestParams } from '../dashboard/columns';
+import { type ATRequestParams } from '../../../../../components/ui/dashboard-columns';
 import { Progress } from "@/components/ui/progress";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useState } from 'react';

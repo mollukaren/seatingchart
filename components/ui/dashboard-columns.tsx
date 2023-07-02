@@ -1,6 +1,6 @@
 import type { ColumnDef } from "@tanstack/react-table";
 import { type CustomTable } from '@prisma/client';
-import type { ATData } from "../../../api/data";
+import type { ATData } from "../../src/pages/api/data";
 import axios from "axios";
 import { ArrowUpDown } from "lucide-react"
 import { Button } from "@/components/ui/button";

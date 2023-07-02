@@ -1,6 +1,6 @@
 import { api } from "~/utils/api";
-import {  columns } from "./columns"
-import { DataTable } from "./data-table"
+import {  columns } from "@/components/ui/dashboard-columns"
+import { DataTable } from "@/components/ui/dashboard-data-table"
 
 export default function DemoPage() {
   const {data} = api.customTable.getAllCustomTables.useQuery(); 
