@@ -74,6 +74,11 @@ export const columns: ColumnDef<CustomTable>[] = [
   {
     accessorKey: "page_link",
     header: "Table Page",
+    cell: (({row})=> {
+      const rowContent = row.original
+      const link = `/user/${rowContent.id}/${rowContent.airtable_base}/${rowContent.airtable_table}`
+      return( <a href={link}>{rowContent.name}</a> )
+    })
   },
   
   // {
