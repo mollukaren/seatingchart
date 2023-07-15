@@ -4,6 +4,7 @@ import type { ATData } from "../../src/pages/api/data";
 import axios from "axios";
 import { ArrowUpDown } from "lucide-react"
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 
 // This type is used to define the shape of our data.
@@ -77,7 +78,10 @@ export const columns: ColumnDef<CustomTable>[] = [
     cell: (({row})=> {
       const rowContent = row.original
       const link = `/user/${rowContent.id}/${rowContent.airtable_base}/${rowContent.airtable_table}`
-      return( <a href={link}>{rowContent.name}</a> )
+      return( 
+        <Button asChild>
+          <Link href={link}>{rowContent.name}</Link>
+        </Button>)
     })
   },
   
