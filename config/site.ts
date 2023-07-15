@@ -8,5 +8,6 @@ export const siteConfig: SiteConfig = {
   url: "https://www.seatingcheart.com",
   links: {
     github: "https://github.com/mollukaren/seatingchart",
+    linkedin: "https://www.linkedin.com/in/michaelollukaren/"
   },
 }

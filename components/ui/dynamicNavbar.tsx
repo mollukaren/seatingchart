@@ -35,7 +35,7 @@ export default function DashboardLayout() {
             {/* Mount the UserButton component */}
             
             <MainNav items={signedInDashboardConfig.mainNav} />
-            <UserButton />
+            <UserButton afterSignOutUrl="/"/>
           </SignedIn>
           <SignedOut>
             {/* Signed out users get sign in button */}

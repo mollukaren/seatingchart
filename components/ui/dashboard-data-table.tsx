@@ -2,7 +2,6 @@ import {
   type ColumnDef,
   type ColumnFiltersState,
   type SortingState,
-  type VisibilityState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
@@ -22,6 +21,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import * as React from "react"
+import { TableDialogCustom } from "./addTableDialogCustom"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -36,8 +36,6 @@ export function DataTable<TData, TValue>({
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   )
-  const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({})
 
   const table = useReactTable({
     data,
@@ -56,7 +54,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
-      <div className="flex items-center py-4">
+      <div className="flex items-center justify-between py-4">
         <Input
           placeholder="Find Tables by Name..."
           value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
@@ -65,6 +63,7 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-sm"
         />
+        <TableDialogCustom/>
       </div>
       <div className="rounded-md border">
         <Table>

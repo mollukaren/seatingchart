@@ -1,21 +1,9 @@
 import { SignUp } from "@clerk/nextjs";
 
-import { useUser } from '@clerk/clerk-react'
-
-
-
-function ExtractUser() : string {
-  const { isSignedIn, user } = useUser();
-  if(!isSignedIn || !user.username) {
-    return "No User";
-  }
-  console.log(user.username)
-  return `${user.username}`
-}
-
 const SignUpPage = () => (
-  <SignUp path="/sign-up" routing="path" signInUrl="/sign-in" 
-  redirectUrl={`/user/[${ExtractUser()}]`}/>
+  <div className="flex items-center justify-center">
+    <SignUp path="/sign-up" routing="path" signInUrl="/sign-in" redirectUrl="/dashboard"/>
+  </div>
   );
 
 
