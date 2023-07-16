@@ -19,19 +19,23 @@ const Hero = () => {
           {/*  Buttons */}
           <div className="mt-7 grid gap-3 w-full sm:inline-flex">
           <SignedOut>
-            <a href="/sign-up">
-              Sign Up
-              <svg className="w-2.5 h-2.5" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </a>
+            <Button asChild>
+              <Link href="/sign-up">Sign Up 
+                <ChevronRight />
+              </Link>            
+            </Button>
+            <Button asChild>
+              <Link href="/sign-up">Log In
+                <ChevronRight />
+              </Link>            
+            </Button>
           </SignedOut>
           <SignedIn>
-          <Button asChild>
-            <Link href="/dashboard">Login 
-              <ChevronRight />
-            </Link>
-          </Button>
+            <Button asChild>
+              <Link href="/dashboard">Dashboard 
+                <ChevronRight />
+              </Link>
+            </Button>
           </SignedIn>
             <Button variant="outline" asChild>
             <a className='flex justify-content: space-between' href="www.youtube.com/somevideohere">
