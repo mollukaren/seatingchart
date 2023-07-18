@@ -9,7 +9,7 @@ export function SkillsAccordion() {
   return (
     <Accordion type="multiple" className="w-full">
       <AccordionItem value="FrontEnd">
-        <AccordionTrigger>💅 &nbsp; Front End &nbsp; 🖼</AccordionTrigger>
+        <AccordionTrigger className="flex justify-between"><h1>💅&nbsp;</h1> <h1>Front End</h1> <h1>&nbsp;🖼</h1></AccordionTrigger>
         <AccordionContent>
           <div className="flex flex-col w-full">
             <h1 className="font-bold">React</h1>
@@ -20,7 +20,7 @@ export function SkillsAccordion() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="BackEnd">
-        <AccordionTrigger>👨🏾‍💻 &nbsp; Back End &nbsp; 🤓</AccordionTrigger>
+      <AccordionTrigger className="flex justify-between"><h1>👨🏾‍💻&nbsp;</h1> <h1>Back End</h1> <h1 className="justify-self-end">&nbsp;🤓</h1></AccordionTrigger>
         <AccordionContent>
           <div className="flex flex-col w-full">
             <h1 className="font-bold">Ruby on Rails</h1>
@@ -34,7 +34,7 @@ export function SkillsAccordion() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="Product">
-        <AccordionTrigger> 📈 &nbsp; Product Management &nbsp; 📊</AccordionTrigger>
+        <AccordionTrigger className="flex justify-between"><h1>📈&nbsp;</h1> <h1>Product Management</h1> <h1>&nbsp;📊</h1></AccordionTrigger>
         <AccordionContent>
           <div className="flex flex-col w-full">
             <h1 className="font-bold">Sprint Planning</h1>

@@ -15,7 +15,7 @@ export function InterestsAccordion() {
   return (
     <Accordion type="multiple" className="w-full">
       <AccordionItem value="Evergreen">
-        <AccordionTrigger>🌲 &nbsp; Evergreen Interests &nbsp; 🌲</AccordionTrigger>
+        <AccordionTrigger className="flex justify-between"><h1>🌲&nbsp;</h1> <h1>Evergreen Interests</h1> <h1>&nbsp;🌲</h1></AccordionTrigger>
         <AccordionContent>
         <div className="flex flex-col w-full" >
           <HoverCard>
@@ -76,7 +76,7 @@ export function InterestsAccordion() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="InSeason">
-        <AccordionTrigger> ☀️ &nbsp; In Season Interests &nbsp; 🍁</AccordionTrigger>
+        <AccordionTrigger className="flex justify-between"><h1>☀️&nbsp;</h1> <h1>In Season Interests</h1> <h1>&nbsp;🍁</h1></AccordionTrigger>
         <AccordionContent>
           <div className="flex flex-col w-full" >
             <HoverCard>
@@ -137,7 +137,7 @@ export function InterestsAccordion() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="OutOfSeason">
-        <AccordionTrigger>🥶 &nbsp; Out Of Season Interests &nbsp; ❄️</AccordionTrigger>
+        <AccordionTrigger className="flex justify-between"><h1>🥶&nbsp;</h1> <h1>In Season Interests</h1> <h1>&nbsp;❄️</h1></AccordionTrigger>
         <AccordionContent>
           <div className="flex flex-col w-full" >
             <h1 className="py-2">Running</h1>

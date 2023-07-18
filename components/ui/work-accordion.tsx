@@ -15,7 +15,7 @@ export function WorkAccordion() {
   return (
     <Accordion type="multiple" className="w-full">
       <AccordionItem value="Software Eng">
-        <AccordionTrigger>👨🏾‍💻 &nbsp; Software Engineering &nbsp; 〈〉</AccordionTrigger>
+        <AccordionTrigger className="flex flex-row justify-between"><h1>👨🏾‍💻&nbsp;</h1> <h1>Software Engineering</h1> <h1>&nbsp;〈〉</h1></AccordionTrigger>
         <AccordionContent>
         <div className="flex flex-col w-full" >
           <HoverCard>
@@ -60,7 +60,7 @@ export function WorkAccordion() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="Product">
-        <AccordionTrigger> 📲 &nbsp; Product Management &nbsp; 👨🏾‍🚒</AccordionTrigger>
+      <AccordionTrigger className="flex flex-row justify-between"><h1>📲&nbsp;</h1> <h1>Product Management</h1> <h1>&nbsp;👨🏾‍🚒</h1></AccordionTrigger>
         <AccordionContent>
         <div className="flex flex-col w-full" >
           <HoverCard>
@@ -86,7 +86,7 @@ export function WorkAccordion() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="Recruiting">
-        <AccordionTrigger>📇 &nbsp; Technical Recruiting &nbsp; 🧑‍💼</AccordionTrigger>
+      <AccordionTrigger className="flex flex-row justify-between"><h1>📇&nbsp;</h1> <h1>Technical Recruiting</h1> <h1>&nbsp;🧑‍💼</h1></AccordionTrigger>
         <AccordionContent>
         <div className="flex flex-col w-full" >
           <HoverCard>
@@ -112,7 +112,7 @@ export function WorkAccordion() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="Entrepreneurship">
-        <AccordionTrigger>💸 &nbsp; Entrepreneurship &nbsp; 📉</AccordionTrigger>
+      <AccordionTrigger className="flex flex-row justify-between"><h1>💸&nbsp;</h1> <h1>Entrepreneurship</h1> <h1>&nbsp;📉</h1></AccordionTrigger>
         <AccordionContent>
         <div className="flex flex-col w-full" >
           <HoverCard>
