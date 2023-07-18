@@ -11,22 +11,25 @@ const aboutPage = () => {
   return (
     <>
     {/* <!-- Icon Blocks --> */}
-    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-      <div className="flex flex-col gap-y-12 max-w-4xl mx-auto">
-        <div className="max-w-full">
-          <p className="text-2xl sm:text-lg font-bold text-gray-800 dark:text-gray-200">
+    <div className="max-w-[85rem] px-4 pb-6 sm:px-6 lg:px-8 lg:pb-10 mx-auto">
+      <div className="flex flex-col max-w-4xl mx-auto items-center">
+        <div className="flex flex-col justify-center min-h-[calc(100vh-6rem)]">
+          <p className="text-2xl md:text-4xl font-bold">
             Seating Cheart is: 
           </p>
-          <p className="text-lg text-indent: 0.125rem text-decoration-line: line-through text-gray-400"> • a revolution in wedding seating chart creation</p>
-          <p className="text-lg"> • a mock application and overglorified airtable API wrapper</p>
-          <p className="text-lg text-decoration-line: line-through text-gray-400"> • a fully functioning, production ready tool to use for your next event</p>
+          <p className="text-2xl text-indent: 0.125rem text-decoration-line: line-through text-gray-400"> • a revolution in wedding seating chart creation</p>
+          <p className="text-2xl"> • a mock application and overglorified airtable API wrapper</p>
+          <p className="text-2xl text-decoration-line: line-through text-gray-400"> • a fully functioning, production ready tool to use for your next event</p>
         </div>
+        
         <div className="max-w-full">
-          Inspired by <a className='font-bold text-gray-800 text-decoration-style: dashed' href='https://www.reddit.com/r/Database/comments/13c5xo4/want_to_build_a_simple_no_code_database_search/'>
-            this reddit post</a>, I set out to build an airtable hosting tool that allows users to view their seating charts outside of Airtable. Along the way,
-            I learned some things...
-        </div>
-        <div className="max-w-full">
+          <hr className="my-8"/>
+          Inspired by <a className='font-bold' href='https://www.reddit.com/r/Database/comments/13c5xo4/want_to_build_a_simple_no_code_database_search/'>
+            this reddit post</a>, Seating Cheart allows users to view their seating charts outside of Airtable.
+          <hr className="my-8"/>
+        </div>        
+
+        <div className="max-w-full pt-6 md:pt-10">
           {/* <!-- Grid --> */}
           <div className="grid md:grid-cols-2 gap-6 lg:gap-12">
             <div className="space-y-6 lg:space-y-10">
