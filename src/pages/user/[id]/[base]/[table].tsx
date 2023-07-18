@@ -9,6 +9,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useState } from 'react';
 import axios from 'axios';
 import { type ATData, type ATRecord } from '~/pages/api/data';
+import LoadingSpinner from '@/components/ui/loading-spinner';
 
 type ATParamsResult<T, E> = { success: true; value: T } | { success: false; error: E };
 
@@ -52,7 +53,7 @@ export default function ChartPage() {
 
   if (isLoading) {
     // Fix This Styling Later
-    return (<Progress className='grid h-screen items-center' value={75} />)
+    return (<LoadingSpinner/>)
   }
 
   if (!filteredData || !filteredData[0]){
@@ -88,7 +89,7 @@ export default function ChartPage() {
       <DataTable columns={columns} data={renderAPIData} />
     </div>) : 
       (!isPromiseResolved ? 
-        (<div>Loading...</div>) : 
+        (<LoadingSpinner/>) : 
           (
             <Alert>
               <AlertTitle>Error!</AlertTitle>

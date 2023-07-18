@@ -1,6 +1,7 @@
 import { api } from "~/utils/api";
 import { columns } from "@/components/ui/dashboard-columns"
 import { DataTable } from "@/components/ui/dashboard-data-table"
+import LoadingSpinner from "@/components/ui/loading-spinner";
 
 export default function DemoPage() {
   const {data} = api.customTable.getAllCustomTables.useQuery(); 
@@ -14,7 +15,7 @@ export default function DemoPage() {
 
       {data ? (<div className="container mx-auto py-4">
         <DataTable columns={columns} data={data} />
-      </div>) : (<div>Loading...</div>)}
+      </div>) : (<LoadingSpinner/>)}
     </div>
   )
   
