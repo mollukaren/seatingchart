@@ -7,7 +7,7 @@ import { ChevronRight, Youtube } from 'lucide-react'
 
 const Hero = () => {
   return (
-    <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-[60rem] mx-auto px-4 sm:px-6 lg:px-8">
       {/* Grid */} 
       <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
         <div>
@@ -48,7 +48,7 @@ const Hero = () => {
         {/*  End Col */}
 
         <div className="relative ml-4">
-          <img className="w-full rounded-md" src="https://images.unsplash.com/photo-1530023367847-a683933f4172?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=485&q=80" alt="Wedding Table Hero"/>
+          <img className="hidden w-full rounded-md md:block" src="https://images.unsplash.com/photo-1530023367847-a683933f4172?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&h=550" alt="Wedding Table Hero"/>
           <div className="absolute inset-0 -z-[1] bg--to-tr from-gray-200 via-white/0 to-white/0 w-full h-full rounded-md mt-4 -mb-4 mr-4 -ml-4 lg:mt-6 lg:-mb-6 lg:mr-6 lg:-ml-6 dark:from-slate-800 dark:via-slate-900/0 dark:to-slate-900/0"></div>
 
           
