@@ -16,6 +16,8 @@ export function SkillsAccordion() {
             <div className="my-2" />
             <h1 className="font-bold">Tailwind</h1>
             <div className="my-2" />
+            <h1 className="font-bold">FramerMotion</h1>
+            <div className="my-2" />
           </div>
         </AccordionContent>
       </AccordionItem>
@@ -27,9 +29,19 @@ export function SkillsAccordion() {
             <div className="my-2" />
             <h1 className="font-bold">Python</h1>
             <div className="my-2" />
-            <h1 className="font-bold">NextJS</h1>
-            <div className="my-2" />
             <h1 className="font-bold">TypeScript</h1>
+          </div>
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="Tooling">
+      <AccordionTrigger className="flex justify-between"><h1>🛠&nbsp;</h1> <h1>Tooling</h1> <h1 className="justify-self-end">&nbsp;🔬</h1></AccordionTrigger>
+        <AccordionContent>
+          <div className="flex flex-col w-full">
+            <h1 className="font-bold">Docker</h1>
+            <div className="my-2" />
+            <h1 className="font-bold">AWS CLI / Boto3</h1>
+            <div className="my-2" />
+            <h1 className="font-bold">NextJS & App Router</h1>
           </div>
         </AccordionContent>
       </AccordionItem>

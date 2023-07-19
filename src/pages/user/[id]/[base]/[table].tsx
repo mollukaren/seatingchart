@@ -83,11 +83,13 @@ export default function ChartPage() {
       );
   }
 
-  return (<>
+  return (<div className="container mx-auto py-10 flex flex-col py-4">
+    <h1 className='font-bold text-2xl pb-4 pl-2'>{filteredData[0].name}</h1>
+
     {renderAPIData ? 
-    (<div className="container mx-auto py-10">
+      (
       <DataTable columns={columns} data={renderAPIData} />
-    </div>) : 
+      ) : 
       (!isPromiseResolved ? 
         (<LoadingSpinner/>) : 
           (
@@ -100,6 +102,6 @@ export default function ChartPage() {
         )
       )
     }
-    </>
+    </div>
   )
 }
