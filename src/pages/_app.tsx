@@ -10,7 +10,18 @@ import Head from "next/head";
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
 
-    <ClerkProvider {...pageProps}>
+    <ClerkProvider {...pageProps} appearance={
+      {
+        variables:{
+          colorPrimary: "#3f2227",
+          colorBackground: "#e6dbe1",
+          colorTextOnPrimaryBackground: "#e6dbe1",
+          colorInputText: "#3f2227",
+          colorTextSecondary: "#3f2227",
+          colorInputBackground: "#e6dbe1"
+        }
+      }
+    }>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <Head>
           <title>Seating Cheart</title>
