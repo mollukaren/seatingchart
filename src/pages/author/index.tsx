@@ -3,11 +3,9 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import CustomizedTimeline from "@/components/ui/mui-timeline"
 import { WorkAccordion } from '@/components/ui/work-accordion'
 import { SkillsAccordion } from '@/components/ui/skills-accordion'
 import { InterestsAccordion } from '@/components/ui/interests-accordion'
@@ -34,7 +32,7 @@ const authorPage = () => {
           My next career goal is becoming a senior engineer and owning bigger impact in the organizations I call home.
           </p>
         </div>
-        <Button className='font-bold text-2xl py-6' href='resumelol'>Find My Resume Here</Button>
+        {/* <Button className='font-bold text-2xl py-6' href='resumelol'>Find My Resume Here</Button> */}
         </div>
         <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
           <Card className="relative overflow-hidden rounded-lg border bg-background p-2">

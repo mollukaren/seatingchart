@@ -1,4 +1,3 @@
-import { siteConfig } from '@/config/site'
 import { SignedIn, SignedOut } from '@clerk/nextjs'
 import React from 'react'
 import { Button } from './button'

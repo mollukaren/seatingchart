@@ -1,16 +1,11 @@
 import * as React from "react"
 import Link from "next/link"
-import { useSelectedLayoutSegment } from "next/navigation"
-import { useRouter } from 'next/router'
-
-
 import { type MainNavItem } from "types"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/ui/icons"
 import { MobileNav } from "@/components/ui/mobile-nav"
 import { usePathname } from "next/navigation"
-import Error from 'next/error'
 import { Logo } from "@/components/ui/logo"
 
 interface MainNavProps {
