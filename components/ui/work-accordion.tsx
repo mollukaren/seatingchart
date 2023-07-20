@@ -42,7 +42,7 @@ export function WorkAccordion() {
           <HoverCard>
             <HoverCardTrigger>
               <div className="flex flex-row justify-between">
-                <h1>Dev Experience Engineer</h1> 
+                <h1>Software Engineer</h1> 
                 <h1 className="font-bold">Lob</h1>
               </div>
             </HoverCardTrigger>
