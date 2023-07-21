@@ -10,8 +10,25 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { TableForm } from "@/components/ui/addTableForm"
+import { useState } from "react";
+import { api } from "~/utils/api";
+import { type CustomTableSchema } from "~/schemas/customTableSchema";
+import type * as z from "zod";
+
+
 
 export function TableDialogCustom() {
+  const [isOpen, setOpen] = useState(true);
+
+  const { mutate } = api.customTable.addTable.useMutation()
+    
+    function onSubmit(values: z.infer<typeof CustomTableSchema>) {
+        // Do something with the form values.
+        // ✅ This will be type-safe and validated.
+        mutate(values)
+        console.log(values)
+        setOpen(false)
+      }
 
   return (
     <Dialog>
@@ -27,7 +44,7 @@ export function TableDialogCustom() {
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid items-center gap-4">
-            <TableForm />
+            {isOpen ? <TableForm onSubmit={onSubmit}/> : <h1>Hit escape</h1>}
           </div>
         </div>
       </DialogContent>

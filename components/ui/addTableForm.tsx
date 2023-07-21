@@ -20,8 +20,12 @@ import { Input } from "@/components/ui/input"
 import { CustomTableSchema } from "@/src/schemas/customTableSchema"
 import React from "react"
 
-export function TableForm() {
-const [isOpen, setOpen] = React.useState(true)
+interface TableFormProps {
+    onSubmit: (values: z.infer<typeof CustomTableSchema>) => void;
+  }
+  
+
+export function TableForm({onSubmit} : TableFormProps) {
 
     const form = useForm<z.infer<typeof CustomTableSchema>>({
         resolver: zodResolver(CustomTableSchema),
@@ -34,18 +38,7 @@ const [isOpen, setOpen] = React.useState(true)
         },
     })
 
-    const { mutate } = api.customTable.addTable.useMutation()
-    
-    function onSubmit(values: z.infer<typeof CustomTableSchema>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        mutate(values)
-        console.log(values)
-        setOpen(false)
-      }
-
     return (
-        isOpen ? (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <FormField
@@ -122,6 +115,5 @@ const [isOpen, setOpen] = React.useState(true)
             />
             <Button type="submit">Submit</Button>
             </form>
-        </Form>) : (<h1> Press Escape </h1>)
-        )
+        </Form>)
 }
