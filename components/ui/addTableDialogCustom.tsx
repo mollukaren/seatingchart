@@ -14,6 +14,7 @@ import { useState } from "react";
 import { api } from "~/utils/api";
 import { type CustomTableSchema } from "~/schemas/customTableSchema";
 import type * as z from "zod";
+import React from "react";
 
 
 
@@ -28,26 +29,35 @@ export function TableDialogCustom() {
         mutate(values)
         console.log(values)
         setOpen(false)
+        window.location.reload()
       }
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button>Add Table</Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Add a Table</DialogTitle>
-          <DialogDescription>
-            Add a table name and a read-only API key from AirTable
-          </DialogDescription>
-        </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid items-center gap-4">
-            {isOpen ? <TableForm onSubmit={onSubmit}/> : <h1>Hit escape</h1>}
+  <Dialog>
+    <DialogTrigger asChild>
+      <Button>Add Table</Button>
+    </DialogTrigger>
+    <DialogContent className="sm:max-w-[425px]">
+      {isOpen ? (
+        <React.Fragment>
+          <DialogHeader>
+            <DialogTitle>Add a Table</DialogTitle>
+            <DialogDescription>
+              Add a table name and a read-only API key from AirTable
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid gap-4 py-4">
+            <div className="grid items-center gap-4">
+              <TableForm onSubmit={onSubmit} />
+            </div>
           </div>
-        </div>
-      </DialogContent>
-    </Dialog>
+        </React.Fragment>
+      ) : (
+        <DialogHeader>
+          <DialogTitle className="min-w-[150px]">Table Added!</DialogTitle>
+        </DialogHeader>
+      )}
+    </DialogContent>
+  </Dialog>
   )
 }
