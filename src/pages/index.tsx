@@ -40,7 +40,7 @@ const Home: NextPage = () => {
             </Button>
           </SignedIn>
             <Button variant="outline" asChild>
-            <a className='flex justify-content: space-between' href="https://youtu.be/IlZnMKYy7aw">
+            <a className='flex justify-content: space-between' href="https://youtu.be/IlZnMKYy7aw" target="_blank">
               <Youtube /> &nbsp;&nbsp;Video Walkthrough
             </a>
             </Button>
