@@ -1,13 +1,9 @@
 import Link from "next/link"
-import { notFound } from "next/navigation"
-
 import { dashboardConfig } from "@/config/dashboard"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { MainNav } from "@/components/ui/mainNav"
-import { SiteFooter } from "@/components/ui/site-footer"
-import { SignInButton, SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs"
-import Hero from "@/components/ui/hero"
+import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs"
 import { type DashboardConfig } from "@/types"
 import { useEffect, useState } from "react"
 
